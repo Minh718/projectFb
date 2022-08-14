@@ -1,0 +1,75 @@
+.loginRegister {
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  background-color: #f0f2f5;
+}
+.containerFormLoginRegister {
+  width: 90vw;
+  max-width: 800px;
+  display: flex;
+  align-items: center;
+}
+.loginRegisterLeft {
+  flex-basis: 50%;
+}
+.loginRegisterRight {
+  flex-basis: 50%;
+  display: flex;
+  flex-direction: column;
+}
+.formLoginRegister {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  border-radius: 5px;
+}
+.form-control {
+  border-radius: 5px;
+  padding: 13px 20px;
+  margin-bottom: 10px;
+  border: 1px solid #333;
+  font-size: 16px;
+}
+.btnLoginRegister {
+  font-size: 17px;
+  padding: 10px;
+  font-weight: bold;
+  background-color: #1775ee;
+  color: #fff;
+  border-color: transparent;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+.loginRegisterLeft {
+  padding-right: 20px;
+}
+.loginRegisterLeft h1 {
+  color: #1775ee;
+  font-size: 50px;
+}
+.btntoLoginRegister {
+  font-size: 17px;
+  padding: 10px;
+  font-weight: bold;
+  background-color: #42b72a;
+  color: #fff;
+  border-color: transparent;
+  border-radius: 5px;
+  text-transform: capitalize;
+  cursor: pointer;
+  width: 70%;
+  align-self: center;
+}
+/* .LinktoLoginRegister {
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+} */
+.forgotPassword {
+  text-align: center;
+  padding-bottom: 10px;
+  color: #1775ee;
+}

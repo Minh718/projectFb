@@ -1,0 +1,68 @@
+.container-reqs {
+  position: absolute;
+  top: 39px;
+  right: 3px;
+  border-radius: 4px;
+  width: 370px;
+  background-color: aliceblue;
+  padding: 10px;
+  color: black;
+  list-style-type: none;
+  box-shadow: 0 0 16px -8px rgba(0, 0, 0, 0.6);
+}
+.container-reqs2 {
+  position: absolute;
+  top: 39px;
+  right: 3px;
+  border-radius: 4px;
+  width: 370px;
+  height: 100px;
+  background-color: aliceblue;
+  padding: 10px;
+  color: black;
+  box-shadow: 0 0 16px -8px rgba(0, 0, 0, 0.6);
+  display: grid;
+  place-items: center;
+}
+.container-reqs::before {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid aliceblue;
+  right: 5px;
+  top: -5px;
+}
+.container-reqs .avatarPerson {
+  width: 60px;
+  height: 60px;
+  margin-right: 12px;
+}
+.container-reqs > li {
+  display: flex;
+  align-items: center;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ccc;
+}
+.container-reqs > li:last-child {
+  border-bottom: none;
+}
+.reqsRight .btns-confirm {
+  height: 38px;
+  display: flex;
+  margin-top: 10px;
+}
+.reqsRight {
+  width: 100%;
+}
+.reqsRight .info-user-req {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.container-reqs > h2 {
+  border-bottom: 2px solid #ccc;
+  margin-bottom: 20px;
+}

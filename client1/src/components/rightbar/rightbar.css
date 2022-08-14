@@ -1,0 +1,52 @@
+.rightbar {
+  flex: 1.5 1;
+}
+.container-rightbar {
+  padding-top: 20px;
+  padding-right: 20px;
+  height: 100%;
+}
+.rightbar-friends-birthday {
+  display: flex;
+  align-items: center;
+}
+.rightbar-friends-birthday > img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  margin-right: 10px;
+}
+.rightbar-friends-birthday > p {
+  font-size: 14px;
+}
+.img-ad {
+  width: 100%;
+  border-radius: 5px;
+  margin: 30px 0;
+}
+.friendOnline > h3 {
+  margin-bottom: 10px;
+}
+.friendOnline {
+  max-height: calc(100vh - 50px);
+  position: sticky;
+  top: 50px;
+  overflow-y: scroll;
+}
+.personInList img {
+  height: 100px;
+  width: 100px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+.listFriends {
+  display: flex;
+  flex-wrap: wrap;
+}
+.personInList {
+  margin-left: 20px;
+  margin-bottom: 10px;
+}
+.titleListFriends {
+  margin-bottom: 12px;
+}

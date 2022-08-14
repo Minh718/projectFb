@@ -1,0 +1,27 @@
+.wraper-friendOnl {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.wraper-img-friendOnl {
+  margin-right: 10px;
+  position: relative;
+}
+.wraper-img-friendOnl::before {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: #30cf30;
+  z-index: 99;
+  border-radius: 50%;
+  right: 1px;
+  top: 1px;
+}
+.name-user-onl {
+  font-weight: 500;
+  color: #000;
+}
+a {
+  text-decoration: none;
+}
