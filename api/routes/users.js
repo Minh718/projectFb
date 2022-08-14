@@ -114,4 +114,5 @@ userRouter.put("/:id/delete", async (req, res) => {
     res.status(500).json(err);
   }
 });
+//ổn thôi
 export default userRouter;
