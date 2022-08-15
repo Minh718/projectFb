@@ -42,3 +42,12 @@
   align-items: center;
   margin-top: 10px;
 }
+.imgShare {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.container-img-posting {
+  margin-top: 10px;
+  position: relative;
+}

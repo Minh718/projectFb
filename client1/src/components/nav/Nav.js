@@ -11,6 +11,7 @@ import { Button } from "@mui/material";
 export default function Nav() {
   const { user, setIsOpenReq, isOpenReq, setUser } = useGlobalContext();
   const [isOpenSetting, setIsOpenSetting] = useState(false);
+  const PF = process.env.REACT_APP_PUBLIC_FOLDER;
   return (
     <div className="container-nav">
       <div className="logo-nav">
@@ -54,7 +55,11 @@ export default function Nav() {
           <Link to={`/profile/${user._id}`}>
             <img
               className="avatarPerson"
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWSvJyNW1YOgmV40R5fpGII63MLSyuvFFh2jjE8RSo&s"
+              src={
+                user.profilePicture
+                  ? PF + `person/${user.profilePicture}`
+                  : PF + "person/noAvatar.png"
+              }
             />
           </Link>
           <span

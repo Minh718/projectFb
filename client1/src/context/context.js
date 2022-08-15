@@ -44,7 +44,9 @@ export const AppProvider = ({ children }) => {
       friends: user.friends.filter((friend) => friend !== userId),
     });
   };
-
+  const updataAvatar = (namefile) => {
+    setUser({ ...user, profilePicture: namefile });
+  };
   useEffect(() => {
     localStorage.setItem("user", JSON.stringify(user));
   }, [user]);
@@ -60,6 +62,7 @@ export const AppProvider = ({ children }) => {
         comfirmAddFriend,
         cancelReqAdd,
         deleteFriend,
+        updataAvatar,
       }}
     >
       {children}

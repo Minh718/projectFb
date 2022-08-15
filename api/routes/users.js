@@ -114,5 +114,15 @@ userRouter.put("/:id/delete", async (req, res) => {
     res.status(500).json(err);
   }
 });
+userRouter.put("/uploadAvatar", async (req, res) => {
+  try {
+    const user = await User.findByIdAndUpdate(req.body.userId, {
+      profilePicture: req.body.namefile,
+    });
+    res.status(200).json(user);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 //ổn thôi
 export default userRouter;

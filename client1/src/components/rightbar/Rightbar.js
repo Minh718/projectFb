@@ -5,6 +5,7 @@ import Online from "../online/Online";
 import { Link, useParams } from "react-router-dom";
 import "./rightbar.css";
 export default function Rightbar() {
+  const PF = process.env.REACT_APP_PUBLIC_FOLDER;
   const userId = useParams().id;
   const { user } = useGlobalContext();
   const [friendOnls, setFriendOnls] = useState([]);
@@ -50,7 +51,13 @@ export default function Rightbar() {
             return (
               <div className="personInList" key={friendOnl._id}>
                 <Link to={`/profile/${friendOnl._id}`}>
-                  <img src="https://anhdep123.com/wp-content/uploads/2021/05/hinh-avatar-trang.jpg" />
+                  <img
+                    src={
+                      friendOnl.profilePicture
+                        ? PF + `person/${friendOnl.profilePicture}`
+                        : PF + "person/noAvatar.png"
+                    }
+                  />
                 </Link>
                 <p>{friendOnl.fullname}</p>
               </div>

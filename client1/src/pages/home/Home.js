@@ -7,7 +7,6 @@ import Rightbar from "../../components/rightbar/Rightbar";
 import "./home.css";
 export default function Home() {
   const { setIsOpenReq } = useGlobalContext();
-  console.log(process.env);
   return (
     <div className="home" onClick={() => setIsOpenReq(false)}>
       <Nav />

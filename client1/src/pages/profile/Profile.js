@@ -9,7 +9,9 @@ import Feed from "../../components/feed/Feed";
 import Rightbar from "../../components/rightbar/Rightbar";
 import { Button } from "@mui/material";
 import ClearIcon from "@mui/icons-material/Clear";
+import AddAPhotoIcon from "@mui/icons-material/AddAPhoto";
 export default function Profile() {
+  const PF = process.env.REACT_APP_PUBLIC_FOLDER;
   const [user, setUser] = useState({});
   const {
     user: userCurrent,
@@ -19,11 +21,25 @@ export default function Profile() {
     comfirmAddFriend,
     cancelReqAdd,
     deleteFriend,
+    updataAvatar,
   } = useGlobalContext();
   const userId = useParams().id;
   const [isSendreq, setIsSendReq] = useState(
     userCurrent.giveRequests.includes(userId)
   );
+  const handleUploadAvatar = async (file) => {
+    const data = new FormData();
+    const namefile = Date.now() + file.name;
+    data.append("name", namefile);
+    data.append("avatar", file);
+    try {
+      await axios.post("/uploadAvatar", data);
+      updataAvatar(namefile);
+      await axios.put(`/users/uploadAvatar`, { userId, namefile });
+    } catch (err) {
+      console.log("lỗi rồi");
+    }
+  };
   useEffect(() => {
     const fetchUser = async () => {
       setUser({});
@@ -93,10 +109,34 @@ export default function Profile() {
               className="imgCoverUser"
               src="https://vcdn1-vnexpress.vnecdn.net/2019/09/29/2-1569755302.jpg?w=1200&h=0&q=100&dpr=1&fit=crop&s=eIlnCLgSWVtioKgU4I4VzA"
             />
-            <img
-              className="imgMainUser"
-              src="https://photo-cms-tpo.zadn.vn/Uploaded/2022/bqmvlcvo/2020_01_16/ong_co_ngu_khong_WZUE.gif"
-            />
+            <div className="containerAvatarUser">
+              <img
+                className="imgMainUser"
+                src={
+                  userCurrent._id === userId
+                    ? userCurrent.profilePicture
+                      ? PF + `person/${userCurrent.profilePicture}`
+                      : PF + "person/noAvatar.png"
+                    : user.profilePicture
+                    ? PF + `person/${user.profilePicture}`
+                    : PF + "person/noAvatar.png"
+                }
+              />
+              {userCurrent._id === userId && (
+                <label htmlFor="avatar" className="upAvatar">
+                  <AddAPhotoIcon />
+                  <input
+                    type="file"
+                    id="avatar"
+                    accept=".png,.jpeg,.jpg"
+                    style={{ display: "none" }}
+                    onChange={(e) => {
+                      handleUploadAvatar(e.target.files[0]);
+                    }}
+                  />
+                </label>
+              )}
+            </div>
             <h2 className="name-user-profile">{user.fullname}</h2>
             <div className="btns-friend">
               {userCurrent._id !== userId ? (

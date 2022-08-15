@@ -12,13 +12,6 @@
   object-fit: cover;
   width: 100%;
 }
-.imgMainUser {
-  height: 150px;
-  width: 150px;
-  border-radius: 50%;
-  margin-top: -100px;
-  border: 3px solid #fff;
-}
 .name-user-profile {
   margin-top: 10px;
 }
@@ -31,4 +24,41 @@
 .btns-friend {
   text-align: right;
   margin-right: 10%;
+}
+.containerAvatarUser {
+  height: 150px;
+  width: 150px;
+}
+.imgMainUser {
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  object-fit: cover;
+  /* position: relative; */
+}
+.containerAvatarUser {
+  height: 150px;
+  width: 150px;
+  margin: auto;
+  margin-top: -100px;
+  position: relative;
+}
+.upAvatar {
+  position: absolute;
+  bottom: -5px;
+  right: -2px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  /* display: none; */
+  visibility: hidden;
+  z-index: -999;
+  opacity: 0;
+}
+.containerAvatarUser:hover .upAvatar {
+  bottom: -2px;
+  opacity: 1;
+  /* right: -2px; */
+  visibility: visible;
+  z-index: 999;
 }
